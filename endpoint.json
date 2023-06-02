@@ -48,7 +48,9 @@
         "functions.js"
     ],
     "flowSteps": [
-        "apiCallGoogleCalendar"
+        "apiCallGoogledrive",
+        "createFileGoogledrive",
+        "listFilesGoogledrive"
     ],
     "configuration":[
         {

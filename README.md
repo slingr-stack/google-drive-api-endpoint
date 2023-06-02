@@ -12,7 +12,8 @@ The Google Drive endpoint is a global endpoint (see [Global vs user endpoints](a
 which means that all users in the same organization will share the same connection to the endpoint.
 
 This endpoint allows direct access to the [Google Drive API](https://developers.google.com/drive/api/reference/rest/v3),
-through a service account, however it provides shortcuts and helpers for most common use cases.
+through a service account, however it provides shortcuts and helpers for most common use cases. 
+Also you can see [Google Drive Documentation](https://developers.google.com/drive/api/guides/about-files) for more information.
 
 Some features available in this endpoint are:
 
@@ -554,12 +555,115 @@ For more information about how shortcuts or flow steps works, and how they are g
 <br>
 
 
+### Get All Files or Get One File by Id
 
-### Custom Flow Steps Name
+Gets a list of files or a single file (with its metadata or content) by id.
 
-Description of Custom Flow Steps
+<h3>Inputs</h3>
 
-*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>File ID</td>
+        <td> text </td>
+        <td>no</td>
+        <td> - </td>
+        <td> Always </td>
+        <td>File ID from GDrive</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Outputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+### Create a Files/Update a File
+
+This step creates a new file. The file content can be provided as a json. If the file is provided as a json, it will be converted to a file before uploading it to Google Drive.
+[File](https://developers.google.com/drive/api/reference/rest/v3/files#File)
+
+<h3>Inputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Headers</td>
+        <td> keyValue </td>
+        <td>no</td>
+        <td> - </td>
+        <td> Always </td>
+        <td>Headers to indicate the type.</td>
+    </tr>
+    <tr>
+        <td>Body</td>
+        <td> json </td>
+        <td>no</td>
+        <td> - </td>
+        <td> Always </td>
+        <td>Metadata or content of File. Must follow the object File of GDrive </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Outputs</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 </details>
